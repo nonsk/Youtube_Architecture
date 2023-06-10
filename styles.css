@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:300,400,700");
+.card,
+.container__frontend div,
+.container__database div,
+.container__backend div {
+  line-height: 2;
+  background: #ea906c;
+  padding: 1.2rem 1rem;
+  border-radius: 4px;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Helvetica", sans-serif;
+  color: #eee2de;
+  background: #b31312;
+  line-height: 1.6;
+  font-size: 1.3rem;
+}
+.container {
+  margin: 5vh 2.5vw;
+  padding: 15vh 0;
+  background: #2b2a4c;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #5f39dd;
+}
+.types {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+}
+.container_2 {
+  margin: 5vh 2.5vw;
+  padding: 15vh 0;
+  background: #2b2a4c;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+.container svg {
+  height: 5rem;
+}
+.container svg line {
+  stroke: #5f39dd;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 2px 20px;
+  animation: animateline 5s linear both infinite;
+}
+.container_main {
+  display: flex;
+  flex-direction: column-reverse;
+  background-image: url("youtube_image.jpg");
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
+}
+.sub_main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 400px;
+  margin: 20px;
+}
+.button_main {
+  border-radius: 0.25rem;
+  cursor: pointer;
+  fill: currentColor;
+  position: relative;
+  transition-duration: 250ms;
+  transition-property: background-color, border-color;
+  transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
+  vertical-align: text-top;
+  width: auto;
+  font-size: 1.125rem;
+  font-weight: 500;
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  background: #2b2a4c;
+  color: #eee2de;
+}
+h3 {
+  font-size: 1.1rem;
+  color: #411fb2;
+  text-align: center;
+}
+h2 {
+  font-size: 4rem;
+  text-decoration: underline;
+  font-family: "Helvetica";
+}
+p {
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+.container__frontend {
+  display: flex;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #b31312;
+  position: relative;
+  text-align: center;
+}
+.container__frontend div {
+  text-align: left;
+  margin: 0 1rem;
+}
+.container__backend {
+  padding: 1vh 1vw;
+  border-radius: 8px;
+  background: #b31312;
+}
+.container__backend div {
+  margin: 2rem 0;
+  width: 47rem;
+  height: 10rem;
+}
+.container__backend div svg {
+  width: 4rem;
+  height: auto;
+  fill: #5f39dd;
+}
+.container__database {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+  width: 30%;
+  line-height: 2;
+  background: #ea906c;
+  padding: 1.2rem 1rem;
+  border-radius: 4px;
+}
+.temp {
+  display: flex;
+  flex-direction: row;
+}
+.right {
+  align-items: right;
+}
+.left {
+  align-items: left;
+}
+@media (max-width: 700px) {
+  .container__frontend {
+    flex-direction: column;
+  }
+  .container__frontend div {
+    margin: 1rem 0;
+  }
+}
+.ui,
+.API,
+.Microservices {
+  background: #ba87fc;
+}
+.databse_blob {
+  display: flex;
+  flex-direction: row;
+}
+@-moz-keyframes animateline {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -5rem;
+  }
+}
+@-webkit-keyframes animateline {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -5rem;
+  }
+}
+@-o-keyframes animateline {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -5rem;
+  }
+}
+@keyframes animateline {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -5rem;
+  }
+}

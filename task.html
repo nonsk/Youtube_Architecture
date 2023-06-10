@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <section class="container">
+      <div class="container__frontend">
+        <div class="ui">
+          <h3>Frontend/UI</h3>
+          <p>
+            For displaying videos and handling user interactions For example
+            video playback, like, comments, uploads,etc
+          </p>
+        </div>
+      </div>
+
+      <svg viewbox="0 0 10 100">
+        <line x1="5" x2="5" y1="0" y2="100" />
+      </svg>
+
+      <div class="container__backend">
+        <div>
+          <h3 style="font-size: 40px; text-align: center">API</h3>
+        </div>
+        <div>
+          <h3>Microservices</h3>
+          <p>
+            Microservices like Video Uploader , Video Encoder ,Search Engine,
+            Video Catalog, Metadata Service and Video Streamer
+          </p>
+        </div>
+      </div>
+      <div class="temp">
+        <svg viewbox="0 0 450 100" class="right">
+          <line x1="5" x2="5" y1="0" y2="100" />
+        </svg>
+        <svg viewbox="0 0 10 100" class="left">
+          <line x1="5" x2="5" y1="0" y2="100" />
+        </svg>
+      </div>
+      <div>
+        <div
+          style="display: flex; justify-content: space-around; padding: 0 20px"
+        >
+          <div class="container__database">
+            <h3>CDN</h3>
+            <p>
+              Used to deliver the video content to the user the CDN will also
+              cache the video content to provide fast and efficient streaming
+            </p>
+          </div>
+          <div class="blob container__database" style="margin-left: 10px">
+            <h3>Database</h3>
+            <p>
+              Responsible for storing metadata about video and user. NOSQL
+              database such as mongodb or Cassandra for storing metadata about
+              videos and user data and a relational database such as MySQL for
+              storing transactional data
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container_2">
+      <div>
+        <div>
+          <h2 style="font-size: 3rem">
+            We will be talking about mainly four use cases
+          </h2>
+        </div>
+        <div>
+          <div class="types">
+            <li style="width: 25%">Uploading a video</li>
+            <li style="width: 25%">Searching a video</li>
+            <li style="width: 25%">Streaming a video</li>
+            <li style="width: 25%">Live Stream</li>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container_2">
+      <div>
+        <h2>Uploading a video</h2>
+      </div>
+      <div>
+        <img alt="upload" src="uploaddlabeled.png" width="1100" height="600" />
+      </div>
+      <div>
+        <ul style="list-style: none">
+          <li>1) The user initiates a video upload from the front end</li>
+          <li>
+            2), 3) The front-end sends a request to the video uploader
+            microservice to handle the video upload
+          </li>
+          <li>4) The video uploader microservice generates a pre-signed URL</li>
+          <li>5) Returns pre-signed URL to the front end</li>
+          <li>
+            6) The front end uses the pre signed URL to upload the video file
+            directly to the designated storage location
+          </li>
+          <li>
+            7), 8) Then the video uploaded microservice sends a request to the
+            video encoder microservice to transport the video into different
+            formats and resolutions or playback on different devices
+          </li>
+          <li>
+            9) The video encoder microservice retrieves the uploaded video file
+            from the designated storage location and performs transcoding it
+            then stores the encoded videos in the designated storage location
+          </li>
+          <li>
+            10), 11) The video uploaded microservice sends a request to the
+            video catalog microservice to store metadata about the video such as
+            title description tags and categories and information about the
+            video's location and the designated storage location and its
+            different encodings in the video catalog database
+          </li>
+          <li>
+            12), 13) The video catalog microservice stores the metadata in video
+            catalog database and retrieves the video file and encoded videos
+            from the designated storage location to gather the necessary
+            information for metadata creation
+          </li>
+          <li>
+            14), 15) The metadata service stores and retrieves the metadata for
+            each video such as title description tags and categories in the
+            video metadata database
+          </li>
+          <li>
+            The video uploader microservice finally sends a notification to the
+            front end that the upload is complete and provides a link to the
+            uploaded video for the users to view or share
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="container_2">
+      <div>
+        <h2>Searching a video</h2>
+      </div>
+      <div>
+        <img alt="upload" src="search.png" width="1100" height="600" />
+      </div>
+      <div>
+        <ul style="list-style: none">
+          <li>
+            1), 2)the user initiates a search request by typing in keywords or
+            selecting search criteria on the front-end UI
+          </li>
+          <li>
+            3) the front-end UI sends the search request to the search engine
+            microservice
+          </li>
+          <li>
+            4) the search engine microservice sends the video information to the
+            video catalog microservice
+          </li>
+          <li>
+            5), 6)the video catalog microservice retrieves the metadata for the
+            videos from the video database
+          </li>
+          <li>
+            7) the video catalog microservice sends the metadata for the
+            matching videos back to the search engine microservice
+          </li>
+          <li>
+            8), 9) the search engine microservice Aggregates the metadata and
+            sends the search results back to the front-end UI the front-end UI
+            displays the search to the user
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="container_2">
+      <div>
+        <h2>Streaming a video</h2>
+      </div>
+      <div>
+        <img alt="upload" src="play_labeled.png" width="1100" height="600" />
+      </div>
+      <div>
+        <ul style="list-style: none">
+          <li>
+            1) The user selects a video to play from the video catalog displayed
+            on the UI
+          </li>
+          <li>
+            2) UI sends a request to the video service API with the ID of the
+            video to be displayed
+          </li>
+          <li>
+            3)- 8) the video service API retrieves the video metadata from the
+            video catalog microservice including the location of the video on
+            the storage service and its different encodings
+          </li>
+          <li>
+            9) the video service API generates a pre-signed URL for the
+            appropriate video encoding from the storage service such as Google
+            file systems or S3 and returns it to the UI
+          </li>
+          <li>
+            10), 11) The UI uses a pre-signed URL to request a video stream from
+            the video streamer microservice the video streamer microservice
+            retrieves the appropriate video from the storage service and serves
+            it to the user over HTTP and finally the users watches the video on
+            the UI
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="container_2">
+      <div>
+        <h2>Live Stream</h2>
+      </div>
+      <div>
+        <img alt="upload" src="livestream1.png" width="1100" height="600" />
+      </div>
+      <div>
+        <ul style="list-style: none">
+          <li>
+            1) The video is preserved to a database for tolerance in case of any
+            disaster.
+          </li>
+          <li>
+            2) The video is sent to the transformation services via
+            RTMP(Real-Time Messaging Protocol) protocol, which is a very famous
+            protocol written on TCP(transmission control protocol) which is
+            better as compared to UDP(User Datagram Protocol) in terms of
+            Reliability , as no data loss is there in TCP , but it's slower as
+            compared to UDP, but in Live-Streams TCP is preferred over UDP
+          </li>
+          <li>
+            3)Then when the transforming is done, the video is sent for
+            segmentation, where the video is divided into segments of few
+            seconds of length. This step is compute intensive.
+          </li>
+          <li>
+            4) Next, the collection of Video segments from the transcoding
+            process.
+          </li>
+          <li>
+            5) After the collection, the result is stored to a DFS for
+            retention.
+          </li>
+          <li>
+            6) The the video is sent to DASH (Dynamic Adaptive Streaming over
+            HTTP) , an adaptive streaming protocol, where the video will be
+            transcoded into different qualities, and will be distributed
+            according to the network strength, let's see in the next flowchart
+          </li>
+        </ul>
+      </div>
+      <div>
+        <img alt="upload" src="stream.png" width="1100" height="600" />
+      </div>
+      <div>
+        <ul style="list-style: none">
+          <li>
+            1) Video assets is the video content that needs to be streamed, the
+            video assets are passed through transcoder where it is converted in
+            to various bitrate variants.
+          </li>
+          <li>
+            2) Bitrate Variants are different versions of the video encoded at
+            different quality levels, each with a different bitrate.
+          </li>
+          <li>
+            3) The transcoded video is then packaged using MPEG-DASH(Moving
+            Pictures Experts Group - DASH) format for efficient delivery, These
+            are encrypted to protect from unauthorized access. Then the packaged
+            encrypted video along with the metadata is organized and is stored
+            in the origin server in a file called DASH-MPD(Media Presentation
+            Description).
+          </li>
+          <li>
+            4) Then the segments are replicated and distributed in CDN(Content
+            Delivery Network) servers to ensure faster delivery.
+          </li>
+          <li>
+            5) On the user request the Video-Player sends request to CDN server
+            for the DASH-MPD file and the CDN sends the files.
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
